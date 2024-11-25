@@ -1,11 +1,11 @@
+require('dotenv').config();
+
 const express = require('express');
 const axios = require('axios');
 
 const app = express();
-const PORT = 3000;
-
-// Token do TagoIO (nunca exponha diretamente em produção)
-const TAGO_TOKEN = 'a0540be8-6e5b-4db1-964d-01004648bf27';
+const PORT = process.env.PORT || 3000; // Porta configurável
+const TAGO_TOKEN = process.env.TAGO_TOKEN; // Token do TagoIO
 
 // Middleware para tratar JSON
 app.use(express.json());
